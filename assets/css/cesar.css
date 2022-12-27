@@ -1,0 +1,21 @@
+
+.cesar-set{
+    width: 25%;
+}
+
+#key,
+#cesar
+{
+    width: 90%;
+}
+
+.in-out{
+    width: 100%;
+}
+.in-out textarea{
+    width: 100%;
+    display: block;
+    min-height: 4em;
+    margin-bottom: 10px;
+    text-align: left;
+}
