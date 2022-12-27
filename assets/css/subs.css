@@ -1,4 +1,4 @@
-.vigener {
+.subs {
     width: 30%;
     min-width: 30%;
     max-width: 30%;
@@ -12,12 +12,12 @@
 }
 
 #key {
-    min-height: 6em;
-    max-height: 6em;
+    min-height: 2em;
+    max-height: 2em;
     overflow: scroll;
+    font-weight: 500;
     text-transform:uppercase;
 }
-
 .in-out {
     width: 100%;
 }
