@@ -1,18 +1,17 @@
-
-.cesar-set{
+.cesar-set {
     width: 25%;
 }
 
 #key,
-#cesar
-{
+#cesar {
     width: 90%;
 }
 
-.in-out{
+.in-out {
     width: 100%;
 }
-.in-out textarea{
+
+.in-out textarea {
     width: 100%;
     display: block;
     min-height: 4em;

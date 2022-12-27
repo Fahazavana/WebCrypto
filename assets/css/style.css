@@ -1,52 +1,54 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
 
-.container{
-    padding:0 5%;
+.container {
+    padding: 0 5%;
     display: flex;
 }
 
 /*Menu*/
-.left{
+.left {
     padding-top: 2em;
     min-width: 18%;
 }
-.menu{
+
+.menu {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.menu-item a{
-    display:block;
+
+.menu-item a {
+    display: block;
     padding: 5px;
     text-decoration: none;
-    color:  black;
+    color: black;
 }
 
-.menu-item a:hover{
+.menu-item a:hover {
     color: blue;
     background-color: azure;
 }
 
 
 /*Main*/
-.main{
+.main {
     width: 100%;
     padding: 1em;
 }
 
-.title{
+.title {
     text-align: center;
 }
 
 
-.input-groups{
+.input-groups {
     margin-bottom: 10px;
 }

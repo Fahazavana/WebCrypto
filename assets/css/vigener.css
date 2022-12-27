@@ -1,0 +1,30 @@
+.vigener {
+    width: 30%;
+    min-width: 30%;
+    max-width: 30%;
+}
+
+#key,
+#process {
+    width: 90%;
+    min-width: 90%;
+    max-width: 90%;
+}
+
+#key {
+    min-height: 6em;
+    max-height: 6em;
+    overflow: scroll;
+}
+
+.in-out {
+    width: 100%;
+}
+
+.in-out textarea {
+    width: 100%;
+    display: block;
+    min-height: 4em;
+    margin-bottom: 10px;
+    text-align: left;
+}

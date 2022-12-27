@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/cesar.css">
+    <link rel="stylesheet" href="./assets/css/vigener.css">
     <title>Crypto</title>
 </head>
 
@@ -24,12 +24,13 @@
             </ul>
         </div>
         <div class="main">
-            <h1 class='title'>Cesar cipher methods</h1>
+
+            <h1 class='title'>Vigenere cipher methods</h1>
             <div class="container">
-                <div class="cesar-set">
+                <div class="vigener">
                     <label for="key">Key</label>
                     <div class="input-groups">
-                        <input type="number" name="key" id="key" min="0" max="25" value="0">
+                        <textarea name="key" id="key">AAA</textarea>
                     </div>
                     <div class="input-groups">
                         <input type="radio" name="task" id="task1" value="1" checked>
@@ -39,7 +40,7 @@
                         <input type="radio" name="task" id="task2" value="-1">
                         <label for="task2">Decrypt</label>
                     </div>
-                    <button id="cesar">Procces</button>
+                    <button id="process">Procces</button>
                 </div>
                 <div class="in-out">
                     <div>
@@ -54,7 +55,9 @@
             </div>
         </div>
     </div>
-    <script src="./assets/js/cesar.js"></script>
+    <script src="./assets/js/vigenere.js"></script>
+    </div>
+    </div>
 </body>
 
 </html>

@@ -2,7 +2,7 @@ const keyIn = document.getElementById('key')
 const tasks = document.getElementsByName('task')
 let input = document.getElementById('input')
 let output = document.getElementById('output')
-const process = document.getElementById('cesar')
+const process = document.getElementById('process')
 
 /* For upper case text */
 function isUpper(leter) {
@@ -25,11 +25,23 @@ function isLower(leter) {
 	}
 }
 
-/* Applying the cesar cipher methods */
-function apply_cesar(msg, key) {
+/* Remove non letter in the key*/
+function cleanKey(key, action) {
+	let keyNbr = []
+	key = key.replace(/[^a-z]/gi, '');
+	key = key.toUpperCase()
+	for (var i = 0; i < key.length; i++) {
+		keyNbr[i] = action * (key.charCodeAt(i) - 65)
+	}
+	return keyNbr
+}
+
+/* Applying the vigener cipher methods */
+function apply_vigenere(msg, key) {
 
 	var new_msg = '';
-	var nbr, nbrCoded, newLetter;
+	var nbr, nbrCoded, newLetter, keypos = 0;
+	const keyLength = key.length;
 
 	for (var i = 0; i < msg.length; i++) {
 		letter = msg.charAt(i)
@@ -38,18 +50,20 @@ function apply_cesar(msg, key) {
 			/* bring to Z/26 */
 			nbr = codeLetter - 65;
 			/* Apply cesar */
-			nbrCoded = (26 + (nbr + key)) % 26
+			nbrCoded = (26 + (nbr + key[keypos])) % 26
 			/* Back to letter */
 			newLetter = String.fromCharCode(nbrCoded + 65);
+			keypos = (keypos + 1) % keyLength;
 		}
 		else {
 			if (isLower(letter)) {
 				/* bring to Z/26 */
 				nbr = codeLetter - 97;
 				/* Apply cesar */
-				nbrCoded = (26 + (nbr + key)) % 26;
+				nbrCoded = (26 + (nbr + key[keypos])) % 26;
 				/* back to letter */
 				newLetter = String.fromCharCode(nbrCoded + 97);
+				keypos = (keypos + 1) % keyLength;
 			}
 			else {
 				/* If not a letter */
@@ -57,21 +71,28 @@ function apply_cesar(msg, key) {
 			}
 		}
 		new_msg += newLetter;
+
 	}
 	return new_msg;
 }
 
 process.addEventListener('click', function () {
-	message = String(input.value);
-	key = parseInt(keyIn.value)
+	let message = String(input.value);
+	let key = String(keyIn.value)
+	let action = 1
 
 	for (const task of tasks) {
 		if (task.checked) {
 			if (task.value !== '1') {
-				key = -key;
+				action = -1;
 			}
 			break;
 		}
 	}
-	output.innerText = apply_cesar(message, key)
+
+	/* Cleaning and transforming key to number, according to the action */
+	key = cleanKey(key, action)
+
+	output.innerText = apply_vigenere(message, key)
+
 })
