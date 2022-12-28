@@ -1,0 +1,24 @@
+.in-out {
+    width: 100%;
+}
+
+.b-label{
+    display: block;
+}
+#nValue,
+#eValue,
+#dValue,
+#process {
+    width: 90%;
+    min-width: 90%;
+    max-width: 90%;
+}
+
+.in-out textarea {
+    width: 100%;
+    display: block;
+    min-height: 4em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
